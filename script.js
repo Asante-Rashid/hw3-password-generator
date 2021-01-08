@@ -1,5 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var LowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz".split("");
+var UpperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var NumericCharacters = "0123456789 ".split("");
+var SpecialCharacters = "!@#$%^&*_+- ".split("");
 
 // Write password to the #password input
 function writePassword() {
@@ -10,9 +14,17 @@ function writePassword() {
   var SpecialCharactersYN = confirm("Do you want special characters included?");
   if (UpperCaseYN == false && LowerCaseYN == false && NumberYN == false && SpecialCharactersYN == false) {
     alert("Password can't be created")
-  };
-  // if none are selected alert that a password can't be made under these conditions
-  prompt("how many characters do you want in your password? (value must be between 8 and 128)")
+  } else {
+    // if none are selected alert that a password can't be made under these conditions
+    var PasswordLength = prompt("how many characters do you want in your password? (value must be between 8 and 128)")
+    // need to add a loop here to ask user to enter appropriate number in one isn't chosen
+
+    for (var i = 0; i < PasswordLength; i++) {
+
+      // loop that takes the available characters and concatinates them until the chosen password length is reached
+      
+      }
+  }
   // 
 
   var password = generatePassword();
