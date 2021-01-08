@@ -12,22 +12,33 @@ function writePassword() {
   var LowerCaseYN = confirm("Do you want lower case letters included?");
   var NumberYN = confirm("Do you want numbers included?");
   var SpecialCharactersYN = confirm("Do you want special characters included?");
+      // if none are selected alert that a password can't be made under these conditions
+
   if (UpperCaseYN == false && LowerCaseYN == false && NumberYN == false && SpecialCharactersYN == false) {
     alert("Password can't be created")
   } else {
-    // if none are selected alert that a password can't be made under these conditions
     var PasswordLength = prompt("how many characters do you want in your password? (value must be between 8 and 128)")
-    // need to add a loop here to ask user to enter appropriate number in one isn't chosen
+    // need to add a alert here to ask user to enter appropriate number in one isn't chosen
+
+    var bank = LowerCaseCharacters+UpperCaseCharacters;
+    console.log(bank);
 
     for (var i = 0; i < PasswordLength; i++) {
 
       // loop that takes the available characters and concatinates them until the chosen password length is reached
-      
+
+      // change concatinated password alphabet string into an array (bank)
+
+      var num = Math.floor(Math.random() * bank.length) + 1;
+      PasswordCharacter = bank[num];
+      console.log(PasswordCharacter);
+
+      GeneratedPassword += PasswordCharacter;
       }
   }
   // 
 
-  var password = generatePassword();
+  var password = generatePassword(); // why is this line here
   var passwordText = document.querySelector("#password");
 
 
