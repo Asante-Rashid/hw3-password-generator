@@ -4,6 +4,7 @@ var LowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz".split("");
 var UpperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var NumericCharacters = "0123456789 ".split("");
 var SpecialCharacters = "!@#$%^&*_+- ".split("");
+var GeneratedPassword = "";
 
 // Write password to the #password input
 function writePassword() {
@@ -12,30 +13,31 @@ function writePassword() {
   var LowerCaseYN = confirm("Do you want lower case letters included?");
   var NumberYN = confirm("Do you want numbers included?");
   var SpecialCharactersYN = confirm("Do you want special characters included?");
-      // if none are selected alert that a password can't be made under these conditions
+  // if none are selected alert that a password can't be made under these conditions
 
   if (UpperCaseYN == false && LowerCaseYN == false && NumberYN == false && SpecialCharactersYN == false) {
     alert("Password can't be created")
   } else {
     var PasswordLength = prompt("how many characters do you want in your password? (value must be between 8 and 128)")
     // need to add a alert here to ask user to enter appropriate number in one isn't chosen
-
-    var bank = LowerCaseCharacters+UpperCaseCharacters;
-    console.log(bank);
-
-    for (var i = 0; i < PasswordLength; i++) {
-
-      // loop that takes the available characters and concatinates them until the chosen password length is reached
-
-      // change concatinated password alphabet string into an array (bank)
-
-      var num = Math.floor(Math.random() * bank.length) + 1;
-      PasswordCharacter = bank[num];
-      console.log(PasswordCharacter);
-
-      GeneratedPassword += PasswordCharacter;
-      }
+    console.log(PasswordLength)
   }
+
+  // change concatinated password alphabet string into an array (bank)
+
+  var bank = LowerCaseCharacters;
+  console.log(bank);
+
+  // loop that takes the available characters and concatinates them until the chosen password length is reached
+
+  for (var i = 0; i < PasswordLength; i++) {
+
+    var num = Math.floor(Math.random() * bank.length) + 1;
+    PasswordCharacter = bank[num];
+    console.log(PasswordCharacter);
+
+  }  
+  //  var GeneratedPassword += PasswordCharacter;
   // 
 
   var password = generatePassword(); // why is this line here
