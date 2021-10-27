@@ -1,35 +1,21 @@
-# 03 JavaScript: Password Generator
+# Password Generator
+---
+![](https://img.shields.io/badge/license-mit-brightgreen?style=plastic) ![](https://img.shields.io/badge/language-HTML-red?style=plastic) ![](https://img.shields.io/badge/language-CSS-red?style=plastic) ![](https://img.shields.io/badge/language-JavaScript-red?style=plastic) 
+## Description
 
-## Your Task
-
-This week’s homework requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+Application that an anyone can use to generate a random password that provides greater security based on criteria they’ve selected. This app will run in the browser, and is responsive, ensuring that it adapts to multiple screen sizes.
 
 The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
 
-## User Story
+## Usage
 
-```
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-```
+Click on generate password and a series of prompts will appear asking for criteria. 
 
-## Acceptance Criteria
+* length (8-128 characters)
+* Character Types (lowercase, uppercase, numeric, and/or special characters)
+  
+Once all prompts are answered and validated, the password is generated and displayed on the page
 
-```
-GIVEN I need a new, secure password
-WHEN I click the button to generate a password
-THEN I am presented with a series of prompts for password criteria
-WHEN prompted for password criteria
-THEN I select which criteria to include in the password
-WHEN prompted for the length of the password
-THEN I choose a length of at least 8 characters and no more than 128 characters
-WHEN prompted for character types to include in the password
-THEN I choose lowercase, uppercase, numeric, and/or special characters
-WHEN I answer each prompt
-THEN my input should be validated and at least one character type should be selected
-WHEN all prompts are answered
-THEN a password is generated that matches the selected criteria
-WHEN the password is generated
-THEN the password is either displayed in an alert or written to the page
-```
+my input should be validated and at least one character type should be selected
+
+![generator](./example.png)
