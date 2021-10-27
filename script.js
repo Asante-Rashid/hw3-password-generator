@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// this was given
+passwordText = document.querySelector("#password");
 
 var LowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz".split("");
 var UpperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -54,14 +54,10 @@ function writePassword() {
     GeneratedPassword += PasswordCharacter;
     console.log(GeneratedPassword);
   };
-  //  var GeneratedPassword += PasswordCharacter;
-  // 
 
   // var password = generatePassword(); // why is this line here
-  // var passwordText = document.querySelector("#password");
 
-
-  // passwordText.value = password;
+  passwordText.value = GeneratedPassword;
 }
 
 // Add event listener to generate button
