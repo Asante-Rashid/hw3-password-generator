@@ -35,7 +35,7 @@ function characterInquiry() {
 
   //! if none are selected alert that a password can't be made under these conditions
   if (UpperCaseYN == false && LowerCaseYN == false && NumberYN == false && SpecialCharactersYN == false) {
-    alert("Password can't be created");
+    alert("Password can't be created without character specifications! Please try again.");
     end();
   } else {
     generatePassword();
@@ -46,19 +46,24 @@ function generatePassword() {
   // passwordgenerator function using available character bank
   var PasswordLength = prompt("how many characters do you want in your password? (value must be between 8 and 128)");
   //! if selected number isn't between 8-128 then a prompt pops up warning the user and makes them enter an acceptable number
+  if (PasswordLength < 8 || PasswordLength > 125) {
+    alert("Password can't be shorter than 8 characters or longer than 128");
+    end();
+  } else {
+    // loop that takes the available characters and concatinates them until the chosen password length is reached
+    for (var i = 0; i < PasswordLength; i++) {
 
-  // loop that takes the available characters and concatinates them until the chosen password length is reached
-  for (var i = 0; i < PasswordLength; i++) {
+      var num = Math.floor(Math.random() * CharBank.length) + 1;
+      PasswordCharacter = CharBank[num];
+      GeneratedPassword += PasswordCharacter;
+    };
 
-    var num = Math.floor(Math.random() * CharBank.length) + 1;
-    PasswordCharacter = CharBank[num];
-    GeneratedPassword += PasswordCharacter;
+    passwordText.value = GeneratedPassword;
   };
-
-  passwordText.value = GeneratedPassword;
 };
 
 function end() {
+  passwordText.value = "";
   return;
 };
 //  event listener to generate button
