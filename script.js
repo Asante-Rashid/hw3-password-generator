@@ -33,7 +33,6 @@ function characterInquiry() {
     CharBank.push.apply(CharBank, SpecialCharacters);
   }
 
-  //! if none are selected alert that a password can't be made under these conditions
   if (UpperCaseYN == false && LowerCaseYN == false && NumberYN == false && SpecialCharactersYN == false) {
     alert("Password can't be created without character specifications! Please try again.");
     end();
@@ -45,7 +44,6 @@ function characterInquiry() {
 function generatePassword() {
   // passwordgenerator function using available character bank
   var PasswordLength = prompt("how many characters do you want in your password? (value must be between 8 and 128)");
-  //! if selected number isn't between 8-128 then a prompt pops up warning the user and makes them enter an acceptable number
   if (PasswordLength < 8 || PasswordLength > 125) {
     alert("Password can't be shorter than 8 characters or longer than 128");
     end();
